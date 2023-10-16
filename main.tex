@@ -1,0 +1,56 @@
+\documentclass[11pt, a4paper, fleqn]{article}
+
+\usepackage{CJKutf8}
+\usepackage{framed}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{physics}
+\usepackage{url}
+\usepackage[hidelinks]{hyperref}
+\usepackage[style=ieee, citestyle=numeric-comp]{biblatex}
+\ExecuteBibliographyOptions{
+	sorting=none,
+	maxnames=3,
+	minnames=2,
+	abbreviate=true,
+	doi=false,
+	}
+%\AtEveryBibitem{\clearfield{title}} % Uncomment to eliminate titles in the Bibliography
+\addbibresource{example.bib} % Put your biblatex file in the same directory as main.tex
+
+%
+\usepackage[hmargin=19.05truemm,vmargin=25.40truemm]{geometry}
+\captionsetup[figure]{
+	format=plain,
+	labelformat=simple,
+	labelsep=period,
+	font={up, footnotesize}
+	}
+%
+\newcommand*{\JaTitle}[1]{\begin{CJK}{UTF8}{ipxm}#1\end{CJK}}
+
+\emergencystretch=1em
+
+\newcommand{\figref}[1]{Figure~\ref{#1}}
+\newcommand{\tabref}[1]{Table~\ref{#1}}
+\renewcommand{\eqref}[1]{Equation~(\ref{#1})}
+
+\begin{document}
+
+	\twocolumn[
+		\input{parts/title} \vspace{5pt}
+		]
+
+	
+	\input{Parts/Abstract}
+	\input{Parts/Chapter1}
+	\input{Parts/Chapter2}
+	%\input{Parts/Chapter3}
+	%\input{Parts/Chapter4}
+	%\input{Parts/Chapter5}
+
+
+
+    \printbibliography[title=Bibliography]
+
+\end{document}
